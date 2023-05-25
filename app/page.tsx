@@ -7,12 +7,12 @@ import { CiYoutube, CiInstagram, CiFacebook } from "react-icons/ci";
 import CardComponent from "../components/card/card";
 
 export default function Home() {
-  const refAbout = useRef(null);
-  const refService = useRef(null);
-  const refServiceFamily = useRef(null);
-  const refServiceTeen = useRef(null);
-  const refServiceMotifator = useRef(null);
-  const refServiceOnline = useRef(null);
+  const refAbout = useRef<HTMLDivElement>(null);
+  const refService = useRef<HTMLDivElement>(null);
+  const refServiceFamily = useRef<HTMLDivElement>(null);
+  const refServiceTeen = useRef<HTMLDivElement>(null);
+  const refServiceMotifator = useRef<HTMLDivElement>(null);
+  const refServiceOnline = useRef<HTMLDivElement>(null);
 
   const handleClickAbout = () => {
     refAbout.current?.scrollIntoView({behavior: 'smooth'});
@@ -124,9 +124,8 @@ export default function Home() {
     </div>
 
     <div className='mb-10 md:mb-20 w-full flex flex-col lg:flex-row gap-y-10'>
-      <div className='max-w-full lg:w-1/2 lg:pr-5'>
+      <div ref={refAbout} className='max-w-full lg:w-1/2 lg:pr-5'>
         <Image
-          ref={refAbout}
           className="mx-auto max-w-full sm:max-w-sm md:max-w-md lg:max-w-full rounded-lg"
           src="/family-therapy-psychologist-office.png"
           alt="Image Person"
@@ -148,7 +147,7 @@ export default function Home() {
 
           <p className='text-base leading-7 font-light'>
             Our psychology service is designed to cater to individuals of all ages, backgrounds, and concerns. 
-            Whether you're struggling with anxiety, depression, relationship issues, stress, 
+            Whether you are struggling with anxiety, depression, relationship issues, stress, 
             trauma, or any other psychological matter, 
             we are committed to helping you overcome obstacles and achieve a 
             healthier and happier state of mind.
